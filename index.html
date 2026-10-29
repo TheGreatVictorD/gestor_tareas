@@ -8,15 +8,22 @@
 <body>
     <h1>Gestor de tareas</h1>
 
-    <p>Error al cargar las bibliotecas. Comprueba la consola para obtener más detalles.</p>
+    <p>Escribe una tarea y agrégala a la lista.</p>
 
     <form id="formulario-tarea">
         <input
             type="text"
             id="nueva-tarea"
             placeholder="Escribe una tarea"
+            required
         >
         <button type="submit">Agregar tarea</button>
     </form>
+
+    <h2>Tareas</h2>
+
+    <ul id="lista-tareas"></ul>
+
+    <script src="app.js"></script>
 </body>
 </html>
