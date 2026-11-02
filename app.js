@@ -13,6 +13,10 @@ formulario.addEventListener("submit", function (evento) {
 
     const nuevaTarea = document.createElement("li");
     nuevaTarea.textContent = textoTarea;
+    
+    nuevaTarea.addEventListener("click", function () {
+        nuevaTarea.classList.toggle("completada");
+    });
 
     listaTareas.appendChild(nuevaTarea);
 
