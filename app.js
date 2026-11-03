@@ -29,10 +29,6 @@ formulario.addEventListener("submit", function (evento) {
             "aria-pressed",
             String(estaCompletada)
         );
-
-        botonCompletar.textContent = estaCompletada
-            ? "Marcar como pendiente"
-            : "Marcar como completada";
     });
 
     nuevaTarea.appendChild(textoTareaElemento);
