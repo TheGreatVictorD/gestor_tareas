@@ -12,12 +12,27 @@ formulario.addEventListener("submit", function (evento) {
     }
 
     const nuevaTarea = document.createElement("li");
-    nuevaTarea.textContent = textoTarea;
-    
-    nuevaTarea.addEventListener("click", function () {
-        nuevaTarea.classList.toggle("completada");
+
+    const textoTareaElemento = document.createElement("span");
+    textoTareaElemento.textContent = textoTarea;
+
+    const botonCompletar = document.createElement("button");
+    botonCompletar.type = "button";
+    botonCompletar.textContent = "Marcar como completada";
+    botonCompletar.setAttribute("aria-pressed", "false");
+
+    botonCompletar.addEventListener("click", function () {
+        const estaCompletada =
+            nuevaTarea.classList.toggle("completada");
+
+        botonCompletar.setAttribute(
+            "aria-pressed",
+            String(estaCompletada)
+        );
     });
 
+    nuevaTarea.appendChild(textoTareaElemento);
+    nuevaTarea.appendChild(botonCompletar);
     listaTareas.appendChild(nuevaTarea);
 
     campoNuevaTarea.value = "";
