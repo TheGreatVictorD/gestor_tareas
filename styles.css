@@ -1,4 +1,8 @@
-.completada {
+.completada span {
     text-decoration: line-through;
     color: gray;
+}
+
+li button {
+    margin-left: 10px;
 }
