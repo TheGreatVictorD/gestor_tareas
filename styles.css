@@ -6,3 +6,7 @@
 li button {
     margin-left: 10px;
 }
+
+.boton-eliminar {
+    color: darkred;
+}

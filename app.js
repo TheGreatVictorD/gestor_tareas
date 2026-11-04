@@ -47,6 +47,13 @@ function guardarTareas() {
     );
 }
 
+function eliminarTarea(posicion) {
+    tareas.splice(posicion, 1);
+
+    guardarTareas();
+    mostrarTareas();
+}
+
 function crearElementoTarea(tarea, posicion) {
     const nuevaTarea = document.createElement("li");
 
@@ -82,8 +89,22 @@ function crearElementoTarea(tarea, posicion) {
         guardarTareas();
     });
 
+    const botonEliminar = document.createElement("button");
+    botonEliminar.type = "button";
+    botonEliminar.textContent = "Eliminar";
+    botonEliminar.classList.add("boton-eliminar");
+    botonEliminar.setAttribute(
+        "aria-label",
+        `Eliminar tarea: ${tarea.texto}`
+    );
+
+    botonEliminar.addEventListener("click", function () {
+        eliminarTarea(posicion);
+    });
+
     nuevaTarea.appendChild(textoTareaElemento);
     nuevaTarea.appendChild(botonCompletar);
+    nuevaTarea.appendChild(botonEliminar);
 
     return nuevaTarea;
 }
