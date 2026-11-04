@@ -16,7 +16,25 @@ function cargarTareas() {
     try {
         const datos = JSON.parse(tareasGuardadas);
 
-        return Array.isArray(datos) ? datos : [];
+        if (!Array.isArray(datos)) {
+            return [];
+        }
+
+        return datos
+            .filter(function (tarea) {
+                return (
+                    tarea !== null &&
+                    typeof tarea === "object" &&
+                    typeof tarea.texto === "string" &&
+                    tarea.texto.trim() !== ""
+                );
+            })
+            .map(function (tarea) {
+                return {
+                    texto: tarea.texto.trim(),
+                    completada: tarea.completada === true
+                };
+            });
     } catch {
         return [];
     }
