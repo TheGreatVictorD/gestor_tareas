@@ -1,5 +1,5 @@
 ﻿Gestor de tareas
-Aplicación web para organizar tareas personales de forma sencilla y persistente.
+Aplicación web accesible para organizar tareas personales, crear, completar, guardar y eliminar tareas de forma sencilla y persistente.
 
 Estado del proyecto
-Proyecto en desarrollo con almacenamiento local en el navegador.
+Proyecto en desarrollo con almacenamiento local y mejoras continuas de accesibilidad.
